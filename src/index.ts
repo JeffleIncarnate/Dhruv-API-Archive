@@ -1,11 +1,15 @@
-import express, { Response, Request, Application } from "express";
+import express, { Response, Request, NextFunction, Application } from "express";
 const app: Application = express();
+const util_logger = require("./core/middleware/logger");
 
 // Routes -- FUN
 const text_to_binary = require("./routes/fun/text_to_binary");
 const random_dare = require("./routes/fun/random_dare");
 const random_truth = require("./routes/fun/random_truth");
 const random_fact = require("./routes/fun/random_fact");
+
+// Logger
+app.use(util_logger.logger);
 
 // Use Routes -- FUN
 app.use("/fun/text_to_binary", text_to_binary);
