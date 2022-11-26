@@ -25,7 +25,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Fallback
-app.get("*", (req: Request, res: Response) => {
+app.all("*", (req: Request, res: Response) => {
   res.send({
     detail: "This endpoint does not exist, please pick one that does",
   });
