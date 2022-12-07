@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon",
-    "build": "rimraf ./build && tsc && copyfiles -u 3 src/core/images/capybara/*.png build/core/images",
-    "start": "npm run build && node build/index.js"
+    "build": "rimraf ./build && tsc && copyfiles -u 3 src/routes/images/capybara/*.png build/routes/images",
+    "start": "nodemon"
   },
   "keywords": [],
   "author": "",
