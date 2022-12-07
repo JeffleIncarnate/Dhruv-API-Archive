@@ -41,4 +41,5 @@ module.exports = {
   return_random_truth,
   return_random_fact,
   return_random_heads_or_tales,
+  get_random_number,
 };

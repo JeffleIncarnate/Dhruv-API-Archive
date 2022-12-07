@@ -9,6 +9,9 @@ const random_truth = require("./routes/fun/random_truth");
 const random_fact = require("./routes/fun/random_fact");
 const heads_or_tails = require("./routes/fun/heads_or_tails");
 
+// Routes -- IMAGES
+const capybara = require("./routes/images/capybara");
+
 // Logger
 app.use(util_logger.logger);
 
@@ -18,6 +21,9 @@ app.use("/fun/random_dare", random_dare);
 app.use("/fun/random_truth", random_truth);
 app.use("/fun/random_fact", random_fact);
 app.use("/fun/heads_or_tails", heads_or_tails);
+
+// Use Routes -- IMAGES
+app.use("/images/capybara", capybara);
 
 // Root endpoint
 app.get("/", (req: Request, res: Response) => {
