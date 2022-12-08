@@ -12,6 +12,11 @@ const heads_or_tails = require("./routes/fun/heads_or_tails");
 // Routes -- IMAGES
 const capybara = require("./routes/images/capybara");
 
+// Routes -- REDIRECT
+const make_redirect = require("./routes/redirect/make_redirect");
+const get_redirects = require("./routes/redirect/get_redirects");
+const redirect = require("./routes/redirect/redirect");
+
 // Logger
 app.use(util_logger.logger);
 
@@ -24,6 +29,11 @@ app.use("/fun/heads_or_tails", heads_or_tails);
 
 // Use Routes -- IMAGES
 app.use("/images/capybara", capybara);
+
+// Use Routes -- REDIRECT
+app.use("/redirect/make", make_redirect);
+app.use("/redirect/get_all", get_redirects);
+app.use("/redirect/r", redirect);
 
 // Root endpoint
 app.get("/", (req: Request, res: Response) => {
