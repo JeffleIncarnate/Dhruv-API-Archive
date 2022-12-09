@@ -17,6 +17,9 @@ const make_redirect = require("./routes/redirect/make_redirect");
 const get_redirects = require("./routes/redirect/get_redirects");
 const redirect = require("./routes/redirect/redirect");
 
+// Routes -- EMAIL
+const send_email = require("./routes/email/send_email");
+
 // Logger
 app.use(util_logger.logger);
 
@@ -34,6 +37,9 @@ app.use("/images/capybara", capybara);
 app.use("/redirect/make", make_redirect);
 app.use("/redirect/get_all", get_redirects);
 app.use("/redirect/r", redirect);
+
+// Use Routes -- EMAIL
+app.use("/send_email", send_email);
 
 // Root endpoint
 app.get("/", (req: Request, res: Response) => {
