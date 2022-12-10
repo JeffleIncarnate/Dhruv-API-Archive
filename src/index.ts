@@ -20,6 +20,12 @@ const redirect = require("./routes/redirect/redirect");
 // Routes -- EMAIL
 const send_email = require("./routes/email/send_email");
 
+// Routes -- FILE_HOSTING
+const file_hosting = require("./routes/file_hosting/hosting");
+
+// Routes -- QR_CODE
+const qr_code = require("./routes/qr_code/qr_code");
+
 // Logger
 app.use(util_logger.logger);
 
@@ -36,10 +42,16 @@ app.use("/images/capybara", capybara);
 // Use Routes -- REDIRECT
 app.use("/redirect/make", make_redirect);
 app.use("/redirect/get_all", get_redirects);
-app.use("/redirect/r", redirect);
+app.use("/r", redirect);
 
 // Use Routes -- EMAIL
 app.use("/send_email", send_email);
+
+// Use Routes -- FILE_HOSTING
+app.use("/hosting", file_hosting);
+
+// Use Routes -- QR_CODE
+app.use("/qr_code", qr_code);
 
 // Root endpoint
 app.get("/", (req: Request, res: Response) => {
