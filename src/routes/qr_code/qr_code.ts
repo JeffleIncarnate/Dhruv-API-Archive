@@ -1,6 +1,5 @@
 var qr = require("qr-image");
-import { setDefaultResultOrder } from "dns";
-import express, { Response, Request, response } from "express";
+import express, { Response, Request } from "express";
 
 const router = express.Router();
 router.use(express.json());
