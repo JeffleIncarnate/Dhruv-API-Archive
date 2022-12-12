@@ -1,6 +1,7 @@
 import express, { Response, Request, Application } from "express";
 const app: Application = express();
 const util_logger = require("./core/middleware/logger");
+const cors = require("cors");
 
 // Routes -- FUN
 const text_to_binary = require("./routes/fun/text_to_binary");
@@ -29,6 +30,9 @@ const qr_code = require("./routes/qr_code/qr_code");
 // Logger
 app.use(util_logger.logger);
 
+// Cors
+app.use(cors());
+
 // Use Routes -- FUN
 app.use("/fun/text_to_binary", text_to_binary);
 app.use("/fun/random_dare", random_dare);
@@ -55,7 +59,7 @@ app.use("/qr_code", qr_code);
 
 // Root endpoint
 app.get("/", (req: Request, res: Response) => {
-  res.send("hehe");
+  res.send({ detail: "Welcome to the Dhruv API!" });
 });
 
 // Fallback
